@@ -1,0 +1,20 @@
+{
+  "name": "node-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "prestart": "echo \"Ich laufe zu erst\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nextlevelshit/dhbw-node-cli.git"
+  },
+  "author": "",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/nextlevelshit/dhbw-node-cli/issues"
+  },
+  "homepage": "https://github.com/nextlevelshit/dhbw-node-cli#readme"
+}
