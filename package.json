@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "npm run generate:markdown",
+    "generate:markdown": "node index.js markdown",
+    "generate:html": "node index.js html",
     "prestart": "echo \"Ich laufe zu erst\""
   },
   "repository": {
@@ -12,6 +14,7 @@
     "url": "git+https://github.com/nextlevelshit/dhbw-node-cli.git"
   },
   "author": "",
+  "type": "module",
   "license": "WTFPL",
   "bugs": {
     "url": "https://github.com/nextlevelshit/dhbw-node-cli/issues"
