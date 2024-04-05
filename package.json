@@ -7,7 +7,8 @@
     "start": "npm run generate:markdown",
     "generate:markdown": "node index.js markdown",
     "generate:html": "node index.js html",
-    "prestart": "echo \"Ich laufe zu erst\""
+    "prestart": "echo \"Ich laufe zu erst\"",
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",

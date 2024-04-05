@@ -25,12 +25,19 @@ This is the content of my blog post.
 `;
     const filename = "blog-post.md";
     await fs.writeFile(path.join(dir, filename), content);
+
+    return content;
 }
 
-const generateHtml = async () => {
+const generateHtml = async (content) => {
     console.log('Generating HTML...');
-    await makeFolder("html");
+    const dir = await makeFolder("html");
+    const html = content.replace(/^# (.+)$/gm, '<h1>$1</h1>');
 
+    const filename = "blog-post.html";
+    await fs.writeFile(path.join(dir, filename), html);
+
+    return html;
 }
 
 switch (args[0]) {
@@ -38,7 +45,17 @@ switch (args[0]) {
         generateMarkdown().catch(console.error);
         break;
     case 'html':
-        generateHtml().catch(console.error);
+        generateMarkdown()
+            .then((markdown) => {
+                generateHtml(markdown)
+                    .then((output) => {
+                        console.log(output);
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                    });
+            })
+            .catch(console.error);
         break;
     default:
         console.error('Invalid command. Use "markdown" or "html"');
